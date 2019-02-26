@@ -88,8 +88,21 @@ contains('Pencil', items, res => {
 
 /* STRETCH PROBLEM */
 
-function removeDuplicates(array, cb) {
+const duplicates = ['Pencil', 'Notebook', 'yo-yo', 'Gum', 'yo-yo', 'Pencil'];
+
+removeDuplicates = (arr, cb) => {
   // removeDuplicates removes all duplicate values from the given array.
+  let duplicateFree = [];
+  arr.forEach(e => {
+    if(!duplicateFree.includes(e)) {
+      duplicateFree.push(e);
+    }
+  });
   // Pass the duplicate free array to the callback function.
+  return cb(duplicateFree);
   // Do not mutate the original array.
 }
+
+removeDuplicates(duplicates, arr => {
+  console.log(arr);
+});
